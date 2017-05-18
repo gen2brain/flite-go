@@ -29,7 +29,7 @@ func TestTextToWave(t *testing.T) {
 	}
 
 	if wav.SampleRate != 16000 {
-		t.Fatalf("Wave sample rate != 1")
+		t.Fatalf("Wave sample rate != 16000")
 	}
 }
 
