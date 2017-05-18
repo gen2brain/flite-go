@@ -27,12 +27,12 @@ import "github.com/gen2brain/flite-go"
 
 func main() {
 	// The valid names are "awb", "kal16", "kal", "rms" and "slt"
-	voice, err := VoiceSelect("kal")
+	voice, err := flite.VoiceSelect("kal")
 	if err != nil {
 		panic(err)
 	}
 
     	// Use "play" for output and it will be sent to the audio device
-	TextToSpeech("Hello World", voice, "output.wav")
+	flite.TextToSpeech("Hello World", voice, "output.wav")
 }
 ```
