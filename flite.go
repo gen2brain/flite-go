@@ -3,7 +3,7 @@ package flite
 
 /*
 #cgo CFLAGS: -I/usr/include/flite
-#cgo LDFLAGS: -lflite_cmu_us_awb -lflite_cmu_us_kal16 -lflite_cmu_us_kal -lflite_cmu_us_rms -lflite_cmu_us_slt -lflite_usenglish -lflite_cmulex -lflite
+#cgo LDFLAGS: -lflite_cmu_us_awb -lflite_cmu_us_kal16 -lflite_cmu_us_kal -lflite_cmu_us_rms -lflite_cmu_us_slt -lflite_usenglish -lflite_cmulex -lflite -lm
 
 #include "flite.h"
 #include <stdlib.h>
@@ -23,10 +23,10 @@ import (
 
 // Voice type
 type Voice struct {
-	Name       *int8
-	Features   *features
-	Ffunctions *features
-	Init       *utterance
+	name       *int8
+	features   *features
+	ffunctions *features
+	init       *utterance
 }
 
 func (v *Voice) cptr() *C.cst_voice {
@@ -59,23 +59,23 @@ func newWaveFromPointer(ptr unsafe.Pointer) *Wave {
 
 // features type
 type features struct {
-	Head *featValPair
-	Ctx  unsafe.Pointer
+	head *featValPair
+	ctx  unsafe.Pointer
 }
 
 // utterance type
 type utterance struct {
-	Features   *features
-	Ffunctions *features
-	Relations  *features
-	Ctx        unsafe.Pointer
+	features   *features
+	ffunctions *features
+	relations  *features
+	ctx        unsafe.Pointer
 }
 
 // featValPair type
 type featValPair struct {
-	Name string
-	Val  *val
-	Next *featValPair
+	name string
+	val  *val
+	next *featValPair
 }
 
 // val type
