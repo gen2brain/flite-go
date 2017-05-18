@@ -45,11 +45,7 @@ func TestVoiceSelect(t *testing.T) {
 		TextToSpeech("Testing "+v, voice, "play")
 		time.Sleep(1 * time.Second)
 
-		s := TextToSpeech("Hello World", voice, "play")
-		if s == 0 {
-			t.Fatalf("%s: 0 seconds of speech generated", v)
-		}
-
+		TextToSpeech("Hello World", voice, "play")
 		time.Sleep(1 * time.Second)
 	}
 }
