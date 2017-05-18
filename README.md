@@ -26,6 +26,7 @@ package main
 import "github.com/gen2brain/flite-go"
 
 func main() {
+	// The valid names are "awb", "kal16", "kal", "rms" and "slt"
 	voice, err := VoiceSelect("kal")
 	if err != nil {
 		panic(err)
