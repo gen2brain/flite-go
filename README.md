@@ -31,7 +31,7 @@ func main() {
 		panic(err)
 	}
 
-    // Use "play" for output and it will be sent to the audio device
+    	// Use "play" for output and it will be sent to the audio device
 	TextToSpeech("Hello World", voice, "output.wav")
 }
 ```
