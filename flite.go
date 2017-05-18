@@ -84,7 +84,7 @@ type val struct {
 }
 
 // VoiceSelect returns a Voice for the voice name.
-// The valid names are "awb_time", "awb", "kal16", "kal", "rms", "slt".
+// The valid names are "awb", "kal16", "kal", "rms", "slt".
 // It will return error if there is no match.
 func VoiceSelect(name string) (*Voice, error) {
 	var ret *C.struct_cst_voice_struct
